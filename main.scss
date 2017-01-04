@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+}
+
+// 父元素是 .wrapper的所有元素
+.wrapper > * {
+  flex: 1 100%;
+}
+
+.header {
+  background: #96F550;
+}
+
+.footer {
+  background: #81F495;
+}
+
+.main {
+  text-align: left;
+  background: #A9E4EF;
+}
+
+.aside-1 {
+  background: #8E8DBE;
+}
+
+.aside-2 {
+  background: #7A306C;
+}
+
+// screen寬度在 600px以上時會套用以下規則
+@media screen and (min-width: 600px) {
+  .aside { flex: 1 auto; }
+}
+
+// screen寬度在 800px以上時會套用以下規則
+@media screen and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; } 
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+body {
+    margin: 0px;
+}
